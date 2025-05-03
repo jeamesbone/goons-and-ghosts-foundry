@@ -1,0 +1,65 @@
+{
+  "GOONSNGHOSTS": {
+    "SystemTitle": "Goons and Ghosts",
+
+    "ActorTypeCharacter": "Character",
+    "ActorTypeGhost": "Ghost",
+
+    "ItemTypeGadget": "Gadget",
+    "ItemTypeGear": "Gear",
+    "ItemTypeBackgroundFeature": "Background Feature",
+    "ItemTypeGhostAbility": "Ghost Ability",
+
+    "HP": "HP",
+    "HPMax": "Max HP",
+    "HPCurrent": "Current HP",
+    "HauntPoints": "Haunt Points",
+
+    "AbilityBody": "Body",
+    "AbilitySmarts": "Smarts",
+    "AbilityESP": "ESP",
+    "Abilities": "Abilities",
+
+    "Background": "Background",
+    "BackgroundHobby": "Hobby",
+    "BackgroundProfession": "Profession",
+    "BackgroundPersonality": "Personality",
+
+    "Gadgets": "Gadgets",
+    "Gear": "Gear",
+    "Items": "Items",
+
+    "Description": "Description",
+    "Notes": "Notes",
+    "Details": "Details",
+    "DifficultyScore": "DS",
+    "GhostAbilityName": "Ability Name",
+    "GhostAbilities": "Ghost Abilities",
+    "GhostClass": "Class",
+
+    "RollAction": "Roll Action",
+    "RollParticleThrower": "Fire Particle Thrower",
+    "RollDefense": "Roll Defense",
+
+    "CrossingTheStreams": "Crossing the Streams!",
+    "Insult": "Insult",
+    "Help": "Help",
+
+    "Condition": "Condition",
+    "Conditions": {
+        "Asleep": "Asleep",
+        "Blinded": "Blinded",
+        "Charmed": "Charmed",
+        "Confused": "Confused",
+        "Deafened": "Deafened",
+        "Diseased": "Diseased",
+        "Frightened": "Frightened",
+        "Grappled": "Grappled",
+        "Muted": "Muted",
+        "Sick": "Sick",
+        "Slimed": "Slimed",
+        "Stunned": "Stunned",
+        "Zapped": "Zapped"
+    }
+  }
+}
