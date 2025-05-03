@@ -1,0 +1,81 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "ghost"
+    ],
+    "character": {
+      "templates": ["base"],
+      "hp": {
+        "value": 10,
+        "max": 10,
+        "temp": 0
+      },
+      "abilities": {
+        "body": { "value": 0 },
+        "smarts": { "value": 0 },
+        "esp": { "value": 0 }
+      },
+      "background": {
+          "hobby": "",
+          "profession": "",
+          "personality": ""
+      },
+      "details": {
+        "notes": ""
+      }
+    },
+    "ghost": {
+      "templates": ["base"],
+      "hp": { // Haunt Points for ghosts
+        "value": 8, // Default, adjust per ghost type
+        "max": 8
+      },
+      "abilities": { // Store ghost abilities here
+        "list": [], // Example: [{ name: "Cold Touch", ds: 8, description: "..." }]
+        "notes": ""
+      },
+      "details": {
+        "class": "", // e.g., "Class II Spirit"
+        "description": ""
+      }
+    },
+    "templates": {
+       "base": {
+         "biography": ""
+       }
+    }
+  },
+  "Item": {
+    "types": [
+      "gadget",
+      "gear",
+      "backgroundFeature",
+      "ghostAbility"
+    ],
+    "gadget": {
+        "description": "",
+        "equipped": true,
+        "templates": ["base"]
+    },
+    "gear": {
+        "description": "Standard issue gear.",
+        "equipped": true,
+        "templates": ["base"]
+    },
+    "backgroundFeature": {
+        "description": "A feature or item from a background.",
+        "templates": ["base"]
+    },
+    "ghostAbility": {
+        "description": "",
+        "ds": 0, // Difficulty Score for the ability
+        "templates": ["base"]
+    },
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    }
+  }
+}
