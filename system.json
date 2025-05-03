@@ -15,10 +15,10 @@
     }
   ],
   "esmodules": [
-    "scripts/main.js"
+    "gng.js"
   ],
   "styles": [
-    "styles/main.css"
+    "gng.css"
   ],
   "languages": [
     {
