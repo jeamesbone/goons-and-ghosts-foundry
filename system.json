@@ -9,7 +9,7 @@
   },
   "url": "https://github.com/jeamesbone/goons-and-ghosts-foundry/",
   "manifest": "https://raw.githubusercontent.com/jeamesbone/goons-and-ghosts-foundry/main/system.json",
-  "download": ""
+  "download": "https://github.com/jeamesbone/goons-and-ghosts-foundry/archive/refs/tags/0.1.zip"
   "esmodules": [
     "gng.js"
   ],
