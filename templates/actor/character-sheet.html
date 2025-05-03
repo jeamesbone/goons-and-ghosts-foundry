@@ -1,0 +1,210 @@
+{{!-- Foundry VTT Character Sheet HTML for Goons and Ghosts --}}
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header flexrow">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields flexcol">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'GOONSNGHOSTS.ActorTypeCharacter'}} Name"/></h1>
+      {{!-- "Who You Gonna Call?" could be a player note or motto --}}
+      <div class="flexrow">
+        <label for="data.details.notes" class="resource-label">{{localize 'GOONSNGHOSTS.Notes'}}:</label>
+        <textarea name="data.details.notes" rows="3">{{data.details.notes}}</textarea>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Left Column: HP, Background, Gadgets --}}
+    <div class="left-column flexcol">
+      {{!-- HP Section --}}
+      <div class="resource flexrow">
+        <label for="data.hp.value" class="resource-label">{{localize "GOONSNGHOSTS.HP"}}</label>
+        <input type="text" name="data.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
+        <span> / </span>
+        <input type="text" name="data.hp.max" value="{{data.hp.max}}" data-dtype="Number"/>
+      </div>
+
+      {{!-- Background Section --}}
+      <div class="background-section flexcol section-box">
+        <h2>{{localize "GOONSNGHOSTS.Background"}}</h2>
+        <div class="flexrow">
+            <label for="data.background.hobby">{{localize "GOONSNGHOSTS.BackgroundHobby"}}:</label>
+            <input type="text" name="data.background.hobby" value="{{data.background.hobby}}"/>
+        </div>
+        <div class="flexrow">
+            <label for="data.background.profession">{{localize "GOONSNGHOSTS.BackgroundProfession"}}:</label>
+            <input type="text" name="data.background.profession" value="{{data.background.profession}}"/>
+        </div>
+        <div class="flexrow">
+            <label for="data.background.personality">{{localize "GOONSNGHOSTS.BackgroundPersonality"}}:</label>
+            <input type="text" name="data.background.personality" value="{{data.background.personality}}"/>
+        </div>
+      </div>
+
+      {{!-- Gadgets/Items Section --}}
+      <div class="items-section flexcol section-box">
+        <h2>{{localize "GOONSNGHOSTS.Items"}}</h2>
+        <ol class="items-list">
+          {{#each items as |item id|}}
+            <li class="item flexrow" data-item-id="{{item._id}}">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                <h4 class="item-name">{{item.name}}</h4>
+                {{!-- Add controls for viewing/editing/deleting items later --}}
+                <div class="item-controls">
+                    <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                </div>
+            </li>
+          {{/each}}
+        </ol>
+        {{!-- Add button to create new items later --}}
+      </div>
+
+    </div>
+
+    {{!-- Right Column: Abilities & Rolls --}}
+    <div class="right-column flexcol">
+       {{!-- Abilities Section --}}
+       <div class="abilities-section flexcol section-box">
+          <h2>{{localize "GOONSNGHOSTS.Abilities"}}</h2>
+          <div class="ability flexrow">
+            <label for="data.abilities.body.value" class="resource-label rollable" data-roll-type="ability" data-ability="body">{{localize "GOONSNGHOSTS.AbilityBody"}}</label>
+            <input type="text" name="data.abilities.body.value" value="{{data.abilities.body.value}}" data-dtype="Number"/>
+          </div>
+          <div class="ability flexrow">
+            <label for="data.abilities.smarts.value" class="resource-label rollable" data-roll-type="ability" data-ability="smarts">{{localize "GOONSNGHOSTS.AbilitySmarts"}}</label>
+            <input type="text" name="data.abilities.smarts.value" value="{{data.abilities.smarts.value}}" data-dtype="Number"/>
+          </div>
+          <div class="ability flexrow">
+            <label for="data.abilities.esp.value" class="resource-label rollable" data-roll-type="ability" data-ability="esp">{{localize "GOONSNGHOSTS.AbilityESP"}}</label>
+            <input type="text" name="data.abilities.esp.value" value="{{data.abilities.esp.value}}" data-dtype="Number"/>
+          </div>
+       </div>
+
+       {{!-- Roll Information/Buttons --}}
+       <div class="roll-info section-box">
+          <h3>{{localize "GOONSNGHOSTS.RollAction"}}</h3>
+          <p>2d6 + {{localize "GOONSNGHOSTS.Abilities"}} + {{localize "GOONSNGHOSTS.Gadgets"}}</p>
+          {{!-- Add specific roll buttons here via JS later --}}
+          <button type="button" class="roll-button" data-roll-type="action">{{localize "GOONSNGHOSTS.RollAction"}}</button>
+
+          <h3>{{localize "GOONSNGHOSTS.RollParticleThrower"}}</h3>
+          <p>1d6 (Teamwork adds dice)</p>
+          <button type="button" class="roll-button" data-roll-type="particle">{{localize "GOONSNGHOSTS.RollParticleThrower"}}</button>
+       </div>
+
+    </div>
+
+  </section>
+
+  {{!-- Basic CSS Styling (can be moved to a separate .css file) --}}
+  <style>
+    .goons-and-ghosts.sheet.actor .sheet-header {
+      border-bottom: 2px groove #eeede0;
+      margin-bottom: 10px;
+      align-items: center; /* Vertically align items in header */
+    }
+    .goons-and-ghosts.sheet.actor .profile-img {
+      flex: 0 0 100px;
+      height: 100px;
+      width: 100px;
+      object-fit: cover;
+      border: 1px solid #999;
+      margin-right: 10px;
+    }
+    .goons-and-ghosts.sheet.actor .header-fields {
+      flex: 1;
+    }
+    .goons-and-ghosts.sheet.actor .charname input {
+      width: 100%;
+      height: 40px;
+      font-size: 2em;
+      margin: 0;
+      border: none;
+    }
+    .goons-and-ghosts.sheet.actor .sheet-body {
+      display: flex;
+      flex-direction: row;
+      gap: 10px; /* Space between columns */
+      height: calc(100% - 120px); /* Adjust based on header height */
+      overflow-y: auto; /* Allow body to scroll if needed */
+    }
+    .goons-and-ghosts.sheet.actor .left-column,
+    .goons-and-ghosts.sheet.actor .right-column {
+      flex: 1; /* Each column takes half the space */
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Space between sections */
+    }
+    .goons-and-ghosts.sheet.actor .resource,
+    .goons-and-ghosts.sheet.actor .ability {
+      align-items: center; /* Align label and input */
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+    }
+    .goons-and-ghosts.sheet.actor .resource-label,
+    .goons-and-ghosts.sheet.actor label {
+      font-weight: bold;
+      margin-right: 5px;
+      flex: 0 0 80px; /* Fixed width for labels */
+      text-align: right;
+    }
+     .goons-and-ghosts.sheet.actor .resource input[type="text"],
+     .goons-and-ghosts.sheet.actor .ability input[type="text"],
+     .goons-and-ghosts.sheet.actor .background-section input[type="text"] {
+       flex: 1; /* Input takes remaining space */
+       text-align: center;
+       border: 1px solid #ccc;
+       border-radius: 3px;
+     }
+    .goons-and-ghosts.sheet.actor .section-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .goons-and-ghosts.sheet.actor .section-box h2,
+    .goons-and-ghosts.sheet.actor .section-box h3 {
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 5px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .goons-and-ghosts.sheet.actor .items-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 200px; /* Limit height and allow scrolling */
+        overflow-y: auto;
+    }
+    .goons-and-ghosts.sheet.actor .item {
+        align-items: center;
+        padding: 3px 0;
+        border-bottom: 1px dotted #ccc;
+    }
+    .goons-and-ghosts.sheet.actor .item-name {
+        flex: 1;
+        margin: 0 5px;
+        font-size: 0.9em;
+    }
+    .goons-and-ghosts.sheet.actor .item-controls a {
+        margin: 0 3px;
+        font-size: 0.8em;
+    }
+    .goons-and-ghosts.sheet.actor .rollable:hover {
+        cursor: pointer;
+        text-shadow: 0 0 5px red;
+    }
+    .goons-and-ghosts.sheet.actor .roll-button {
+        display: block;
+        margin: 5px auto;
+        padding: 5px 10px;
+    }
+  </style>
+
+</form>
