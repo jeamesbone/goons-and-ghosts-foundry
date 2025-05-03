@@ -7,13 +7,9 @@
     "minimum": "11",
     "verified": "13"
   },
-  "authors": [
-    {
-      "name": "Jeames Bone",
-      "email": "jeames.bone@gmail.com",
-      "url": ""
-    }
-  ],
+  "url": "https://github.com/jeamesbone/goons-and-ghosts-foundry/",
+  "manifest": "https://raw.githubusercontent.com/jeamesbone/goons-and-ghosts-foundry/main/system.json",
+  "download": ""
   "esmodules": [
     "gng.js"
   ],
