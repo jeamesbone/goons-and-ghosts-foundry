@@ -4,21 +4,21 @@
   "description": "A Foundry VTT system for the Goons and Ghosts TTRPG. Investigate paranormal anomalies and trap ghosts!",
   "version": "0.1.0",
   "compatibility": {
-    "minimum": "11", // Specify the minimum Foundry VTT version
-    "verified": "12" // Specify the Foundry VTT version you've tested with
+    "minimum": "11",
+    "verified": "13"
   },
   "authors": [
     {
-      "name": "Your Name", // Replace with your name/handle
-      "email": "", // Optional: Your email
-      "url": "" // Optional: Your website/repo URL
+      "name": "Jeames Bone",
+      "email": "jeames.bone@gmail.com",
+      "url": ""
     }
   ],
   "esmodules": [
-    "scripts/goons-and-ghosts.js" // Path to your main system JavaScript file
+    "scripts/main.js" // Path to your main system JavaScript file
   ],
   "styles": [
-    "styles/goons-and-ghosts.css" // Path to your system's CSS file
+    "styles/main.css" // Path to your system's CSS file
   ],
   "languages": [
     {
