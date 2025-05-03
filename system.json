@@ -1,0 +1,44 @@
+{
+  "id": "goons-and-ghosts",
+  "title": "Goons and Ghosts",
+  "description": "A Foundry VTT system for the Goons and Ghosts TTRPG. Investigate paranormal anomalies and trap ghosts!",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "11", // Specify the minimum Foundry VTT version
+    "verified": "12" // Specify the Foundry VTT version you've tested with
+  },
+  "authors": [
+    {
+      "name": "Your Name", // Replace with your name/handle
+      "email": "", // Optional: Your email
+      "url": "" // Optional: Your website/repo URL
+    }
+  ],
+  "esmodules": [
+    "scripts/goons-and-ghosts.js" // Path to your main system JavaScript file
+  ],
+  "styles": [
+    "styles/goons-and-ghosts.css" // Path to your system's CSS file
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json" // Path to the English language file
+    }
+  ],
+  "packs": [], // You can add Compendium packs here later
+  "packFolders": [],
+  "socket": false, // Set to true if your system needs real-time communication
+  "initiative": "1d6", // Simple initiative, can be adjusted
+  "grid": { // Default grid settings
+      "distance": 1,
+      "units": "m"
+  },
+  "primaryTokenAttribute": "hp", // For character tokens
+  "secondaryTokenAttribute": null,
+  "url": "", // Optional: Link to the system's repository or website
+  "manifest": "", // Optional: Link to this manifest file if hosted online
+  "download": "", // Optional: Link to a downloadable zip of the system
+  "license": "LICENSE.txt" // Optional: Path to your license file
+}
