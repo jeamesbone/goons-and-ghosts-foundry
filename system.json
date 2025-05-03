@@ -15,30 +15,26 @@
     }
   ],
   "esmodules": [
-    "scripts/main.js" // Path to your main system JavaScript file
+    "scripts/main.js"
   ],
   "styles": [
-    "styles/main.css" // Path to your system's CSS file
+    "styles/main.css"
   ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json" // Path to the English language file
+      "path": "lang/en.json"
     }
   ],
-  "packs": [], // You can add Compendium packs here later
+  "packs": [],
   "packFolders": [],
-  "socket": false, // Set to true if your system needs real-time communication
-  "initiative": "1d6", // Simple initiative, can be adjusted
-  "grid": { // Default grid settings
+  "socket": false,
+  "initiative": "1d6",
+  "grid": {
       "distance": 1,
       "units": "m"
   },
-  "primaryTokenAttribute": "hp", // For character tokens
+  "primaryTokenAttribute": "hp",
   "secondaryTokenAttribute": null,
-  "url": "", // Optional: Link to the system's repository or website
-  "manifest": "", // Optional: Link to this manifest file if hosted online
-  "download": "", // Optional: Link to a downloadable zip of the system
-  "license": "LICENSE.txt" // Optional: Path to your license file
 }
